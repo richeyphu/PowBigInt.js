@@ -1,0 +1,26 @@
+{
+  "name": "powbigint",
+  "version": "1.0.0",
+  "description": "A simple utility library for calculating powers of big integers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "power",
+    "big",
+    "integer",
+    "biginteger",
+    "bigint",
+    "pow",
+    "math",
+    "mathematics",
+    "exponential",
+    "utility",
+    "library",
+    "util",
+    "lib"
+  ],
+  "author": "richeyphu",
+  "license": "MIT"
+}
