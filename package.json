@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
+  "homepage": "https://github.com/richeyphu/PowBigInt.js#readme",
+  "repository": "github:richeyphu/PowBigInt.js",
   "keywords": [
     "power",
     "big",
