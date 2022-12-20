@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A simple utility library for calculating powers of big integers",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config jest.config.json",
     "build": "tsc"
   },
   "homepage": "https://github.com/richeyphu/PowBigInt.js#readme",
@@ -29,8 +30,13 @@
   "author": "richeyphu",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^29.2.4",
     "@types/node": "^18.11.17",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.9.4"
   },
-  "file": ["dist/**/*"]
+  "file": [
+    "dist/**/*"
+  ]
 }
