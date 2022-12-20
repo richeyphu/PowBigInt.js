@@ -6,4 +6,4 @@ function powBigInt(base: bigint, exp: bigint): bigint {
   return result;
 }
 
-module.exports = powBigInt;
+export { powBigInt };
