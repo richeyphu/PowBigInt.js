@@ -1,7 +1,7 @@
 {
   "name": "powbigint",
   "version": "1.0.0",
-  "description": "A simple utility library for calculating powers of big integers",
+  "description": "Calculate powers of big integers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
