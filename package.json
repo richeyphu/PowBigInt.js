@@ -7,14 +7,14 @@
   "module": "dist/index.mjs",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "npm run bundle && npm run declaration",
+    "build": "npm run build:clean && npm run bundle && npm run declaration",
     "build:clean": "rm -rf dist",
     "bundle": "npm run bundle:cjs && npm run bundle:esm",
     "bundle:cjs": "esbuild src/index.ts --bundle --minify --target=esnext --format=cjs --outfile=dist/index.js --platform=node",
     "bundle:esm": "esbuild src/index.ts --bundle --minify --target=esnext --format=esm --outfile=dist/index.mjs --platform=node",
     "declaration": "tsc src/index.ts --declaration --emitDeclarationOnly --esModuleInterop --allowSyntheticDefaultImports --outDir dist",
     "prepublish": "npm run build",
-    "postpublish": "npm run build:clean"
+    "postpublish": ""
   },
   "homepage": "https://github.com/richeyphu/PowBigInt.js#readme",
   "repository": "github:richeyphu/PowBigInt.js",
