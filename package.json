@@ -1,6 +1,6 @@
 {
   "name": "powbigint",
-  "version": "1.0.3",
+  "version": "1.0.4-0",
   "description": "Calculate powers of big integers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
