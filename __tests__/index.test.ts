@@ -27,3 +27,21 @@ describe("powBigInt", () => {
     );
   });
 });
+
+describe("powBigInt", () => {
+  it("should throw error if exponent is negative", () => {
+    expect(() => powBigInt(2n, -3n)).toThrow();
+    expect(() => powBigInt(3n, -4n)).toThrow();
+    expect(() => powBigInt(BigInt(4), -5n)).toThrow();
+    expect(() => powBigInt(BigInt(5), BigInt(-6))).toThrow();
+    expect(() => powBigInt(BigInt(6), BigInt(-7))).toThrow();
+  });
+});
+
+describe("powBigInt", () => {
+  it("should return the same result as `**` (negative)", () => {
+    expect(powBigInt(-2n, 100000n)).toBe((-2n) ** 100000n);
+    expect(powBigInt(-3000n, 2000n)).toBe(BigInt(-3000) ** 2000n);
+    expect(powBigInt(BigInt(-99), 6000n)).toBe((-99n) ** 6000n);
+  });
+});
