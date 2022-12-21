@@ -7,8 +7,10 @@
   "module": "dist/index.mjs",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "npm run build:clean && npm run bundle && npm run declaration",
-    "build:clean": "rm -rf dist",
+    "build": "npm run bundle && npm run declaration",
+    "clean": "npm run clean:linux || npm run clean:windows",
+    "clean:linux": "rm -rf dist",
+    "clean:windows": "rmdir /s /q dist",
     "bundle": "npm run bundle:cjs && npm run bundle:esm",
     "bundle:cjs": "esbuild src/index.ts --bundle --minify --target=esnext --format=cjs --outfile=dist/index.js --platform=node",
     "bundle:esm": "esbuild src/index.ts --bundle --minify --target=esnext --format=esm --outfile=dist/index.mjs --platform=node",
