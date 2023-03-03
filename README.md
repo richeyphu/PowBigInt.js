@@ -1,7 +1,9 @@
 # PowBigInt.js
 
-[![NPM version](https://img.shields.io/npm/v/powbigint.svg)](https://www.npmjs.com/package/powbigint)
+[![NPM version](https://img.shields.io/npm/v/powbigint.svg)](https://npmjs.com/package/powbigint)
+[![NPM total downloads](https://img.shields.io/npm/dt/powbigint)](https://npmjs.org/package/powbigint)
 [![install size](https://packagephobia.com/badge?p=powbigint)](https://packagephobia.com/result?p=powbigint)
+[![minified size](https://img.shields.io/bundlephobia/min/powbigint)](https://bundlephobia.com/package/powbigint)
 
 A simple utility library for calculating powers of big integers
 
