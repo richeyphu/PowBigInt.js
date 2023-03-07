@@ -16,7 +16,7 @@
     "bundle:esm": "esbuild src/index.ts --bundle --minify --target=esnext --format=esm --outfile=dist/index.mjs --platform=node",
     "declaration": "tsc --project tsconfig.json",
     "prettier": "npx prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
-    "prepublish": "npm run build && npm run test",
+    "prepublishOnly": "npm run build && npm test",
     "postpublish": ""
   },
   "homepage": "https://github.com/richeyphu/PowBigInt.js#readme",
