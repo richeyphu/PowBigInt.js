@@ -5,7 +5,17 @@
 [![install size](https://packagephobia.com/badge?p=powbigint)](https://packagephobia.com/result?p=powbigint)
 [![minified size](https://img.shields.io/bundlephobia/min/powbigint)](https://bundlephobia.com/package/powbigint)
 
-A simple utility library for calculating powers of big integers
+A simple utility library for calculating powers of big integers.
+
+## Install
+
+```sh
+$ npm i powbigint
+# or
+$ yarn add powbigint
+# or
+$ pnpm add powbigint
+```
 
 ## Usage
 
