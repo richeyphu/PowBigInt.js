@@ -3,8 +3,8 @@
   "version": "1.0.4",
   "description": "Calculate powers of big integers",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jest.config.json",
     "build": "npm run bundle && npm run declaration",
@@ -12,8 +12,8 @@
     "clean:linux": "rm -rf dist",
     "clean:windows": "rmdir /s /q dist",
     "bundle": "npm run bundle:cjs && npm run bundle:esm",
-    "bundle:cjs": "esbuild src/index.ts --bundle --minify --target=esnext --format=cjs --outfile=dist/index.js --platform=node",
-    "bundle:esm": "esbuild src/index.ts --bundle --minify --target=esnext --format=esm --outfile=dist/index.mjs --platform=node",
+    "bundle:cjs": "esbuild src/index.ts --bundle --target=esnext --format=cjs --outfile=dist/index.js --platform=node",
+    "bundle:esm": "esbuild src/index.ts --bundle --target=esnext --format=esm --outfile=dist/index.mjs --platform=node",
     "declaration": "tsc src/index.ts --declaration --emitDeclarationOnly --esModuleInterop --allowSyntheticDefaultImports --outDir dist",
     "prepublish": "npm run build",
     "postpublish": ""
@@ -30,22 +30,22 @@
     "math",
     "mathematics",
     "exponential",
-    "utility",
-    "library",
     "util",
+    "utility",
     "lib",
+    "library",
     "javascript",
     "typescript"
   ],
-  "author": "richeyphu",
+  "author": "phuritd",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^29.2.4",
-    "@types/node": "^18.11.17",
-    "esbuild": "0.16.10",
-    "jest": "^29.3.1",
-    "ts-jest": "^29.0.3",
-    "typescript": "^4.9.4"
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.6",
+    "esbuild": "0.17.11",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
   },
   "files": [
     "dist/**/*"
