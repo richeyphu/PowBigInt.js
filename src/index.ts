@@ -8,3 +8,4 @@ function powBigInt(base: bigint, exp: bigint): bigint {
 }
 
 export { powBigInt };
+export default powBigInt;
