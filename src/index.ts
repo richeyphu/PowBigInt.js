@@ -22,8 +22,8 @@
  * ```
  */
 function powBigInt(base: bigint, exp: bigint): bigint {
-  if (isBigInt(base)) throw new TypeError('Base is not a BigInt');
-  if (isBigInt(exp)) throw new TypeError('Exponent is not a BigInt');
+  if (!isBigInt(base)) throw new TypeError('Base is not a BigInt');
+  if (!isBigInt(exp)) throw new TypeError('Exponent is not a BigInt');
   if (exp < BigInt(0)) throw new RangeError('Exponent must be positive');
 
   let result: bigint = BigInt(1);
