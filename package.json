@@ -15,6 +15,7 @@
     "bundle:cjs": "esbuild src/index.ts --bundle --target=esnext --format=cjs --outfile=dist/index.js --platform=node",
     "bundle:esm": "esbuild src/index.ts --bundle --target=esnext --format=esm --outfile=dist/index.mjs --platform=node",
     "declaration": "tsc src/index.ts --declaration --emitDeclarationOnly --esModuleInterop --allowSyntheticDefaultImports --outDir dist",
+    "prettier": "npx prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
     "prepublish": "npm run build",
     "postpublish": ""
   },
