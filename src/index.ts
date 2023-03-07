@@ -15,6 +15,11 @@
  * @throws {RangeError} Exponent must be positive.
  *
  * @returns {bigint} A number representing base taken to the power of exponent.
+ *
+ * @example Here's a simple example:
+ * ```js
+ * powBigInt(2n, 10n); // 1024n
+ * ```
  */
 function powBigInt(base: bigint, exp: bigint): bigint {
   if (isBigInt(base)) throw new TypeError('Base is not a BigInt');
@@ -33,6 +38,15 @@ function powBigInt(base: bigint, exp: bigint): bigint {
  * @param value {unknown} The value to check.
  *
  * @returns {value is bigint} A boolean indicating if the value is a BigInt.
+ *
+ * @example Here's an example with a BigInt:
+ * ```js
+ * isBigInt(2n); // true
+ * ```
+ * @example Here's an example with a Number:
+ * ```js
+ * isBigInt(2); // false
+ * ```
  */
 function isBigInt(value: unknown): value is bigint {
   return typeof value === 'bigint';
