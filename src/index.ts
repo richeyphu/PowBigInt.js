@@ -5,16 +5,21 @@
  */
 
 /**
- * Calculate the power of a big integer.
+ * A utility library for calculating powers of big integers.
+ * @packageDocumentation
+ */
+
+/**
+ * Calculates the power of a big integer.
  *
- * @param base {bigint} The base number.
- * @param exp {bigint} The exponent number.
+ * @param {bigint} base - The base number.
+ * @param {bigint} exp - The exponent number.
+ *
+ * @returns {bigint} A number representing base taken to the power of exponent.
  *
  * @throws {TypeError} Base is not a BigInt.
  * @throws {TypeError} Exponent is not a BigInt.
  * @throws {RangeError} Exponent must be positive.
- *
- * @returns {bigint} A number representing base taken to the power of exponent.
  *
  * @example Here's a simple example:
  * ```js
@@ -24,20 +29,20 @@
 function powBigInt(base: bigint, exp: bigint): bigint {
   if (!isBigInt(base)) throw new TypeError('Base is not a BigInt');
   if (!isBigInt(exp)) throw new TypeError('Exponent is not a BigInt');
-  if (exp < BigInt(0)) throw new RangeError('Exponent must be positive');
+  if (exp < 0) throw new RangeError('Exponent must be positive');
 
-  let result: bigint = BigInt(1);
+  let result = BigInt(1);
   for (let i = 0; i < exp; i++) result *= base;
 
   return result;
 }
 
 /**
- * Check if the value is a BigInt.
+ * Checks if the value is a BigInt.
  *
- * @param value {unknown} The value to check.
+ * @param {unknown} value - The value to check.
  *
- * @returns {value is bigint} A boolean indicating if the value is a BigInt.
+ * @returns {boolean} A boolean indicating if the value is a BigInt.
  *
  * @example Here's an example with a BigInt:
  * ```js
