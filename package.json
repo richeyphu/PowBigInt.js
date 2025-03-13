@@ -7,17 +7,17 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "npm run bundle && npm run declaration",
-    "clean": "npm run clean:linux || npm run clean:windows",
+    "build": "pnpm bundle && pnpm declaration",
+    "clean": "pnpm clean:linux || pnpm clean:windows",
     "clean:linux": "rm -rf dist",
     "clean:windows": "rmdir /s /q dist",
-    "bundle": "npm run bundle:cjs && npm run bundle:esm",
+    "bundle": "pnpm bundle:cjs && pnpm bundle:esm",
     "bundle:cjs": "esbuild src/index.ts --bundle --minify --target=esnext --format=cjs --outfile=dist/index.js --platform=node",
     "bundle:esm": "esbuild src/index.ts --bundle --minify --target=esnext --format=esm --outfile=dist/index.mjs --platform=node",
     "declaration": "tsc --project tsconfig.json",
     "lint": "eslint src --ext .ts",
-    "prettier": "npx prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
-    "prepublishOnly": "npm run build && npm test"
+    "prettier": "prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
+    "prepublishOnly": "pnpm build && pnpm test"
   },
   "homepage": "https://github.com/richeyphu/PowBigInt.js#readme",
   "repository": "github:richeyphu/PowBigInt.js",
@@ -49,6 +49,7 @@
     "esbuild": "0.25.1",
     "eslint": "^9.22.0",
     "jest": "^29.7.0",
+    "prettier": "^3.5.3",
     "ts-jest": "^29.2.6",
     "typescript": "^5.8.2"
   },
