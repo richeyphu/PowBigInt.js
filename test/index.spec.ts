@@ -6,6 +6,7 @@ describe('powBigInt', () => {
   });
 
   it('should return the correct result', () => {
+    expect(powBigInt(0n, 0n)).toBe(1n);
     expect(powBigInt(2n, 3n)).toBe(8n);
     expect(powBigInt(3n, 4n)).toBe(BigInt(81));
     expect(powBigInt(BigInt(4), 5n)).toBe(1024n);
