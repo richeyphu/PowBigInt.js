@@ -31,8 +31,15 @@ function powBigInt(base: bigint, exp: bigint): bigint {
   if (!isBigInt(exp)) throw new TypeError('Exponent is not a BigInt');
   if (exp < 0) throw new RangeError('Exponent must be positive');
 
-  let result = BigInt(1);
-  for (let i = 0; i < exp; i++) result *= base;
+  let result = 1n;
+  let currentBase = base;
+  let currentExp = exp;
+
+  while (currentExp > 0) {
+    if (currentExp % 2n === 1n) result *= currentBase;
+    currentBase *= currentBase;
+    currentExp /= 2n;
+  }
 
   return result;
 }
