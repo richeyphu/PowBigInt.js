@@ -17,7 +17,7 @@
     "declaration": "tsc --project tsconfig.json",
     "lint": "eslint src --ext .ts",
     "prettier": "prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
-    "prepublishOnly": "pnpm build && pnpm test"
+    "prepublishOnly": "pnpm test && pnpm build"
   },
   "homepage": "https://github.com/richeyphu/PowBigInt.js#readme",
   "repository": "github:richeyphu/PowBigInt.js",
