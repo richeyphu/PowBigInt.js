@@ -1,12 +1,10 @@
-import { powBigInt } from '../dist';
+import { powBigInt } from '../src';
 
 describe('powBigInt', () => {
   it('should be a function', () => {
     expect(powBigInt).toEqual(expect.any(Function));
   });
-});
 
-describe('powBigInt', () => {
   it('should return the correct result', () => {
     expect(powBigInt(2n, 3n)).toBe(8n);
     expect(powBigInt(3n, 4n)).toBe(BigInt(81));
@@ -14,9 +12,7 @@ describe('powBigInt', () => {
     expect(powBigInt(BigInt(5), BigInt(6))).toBe(15625n);
     expect(powBigInt(BigInt(6), BigInt(7))).toBe(BigInt(279936));
   });
-});
 
-describe('powBigInt', () => {
   it('should return the same result as `**`', () => {
     expect(powBigInt(2n, 100000n)).toBe(2n ** 100000n);
     expect(powBigInt(3000n, 2000n)).toBe(BigInt(3000) ** 2000n);
@@ -26,9 +22,7 @@ describe('powBigInt', () => {
       BigInt(10000) ** BigInt(2022)
     );
   });
-});
 
-describe('powBigInt', () => {
   it('should throw error if exponent is negative', () => {
     expect(() => powBigInt(2n, -3n)).toThrow();
     expect(() => powBigInt(3n, -4n)).toThrow();
@@ -36,9 +30,7 @@ describe('powBigInt', () => {
     expect(() => powBigInt(BigInt(5), BigInt(-6))).toThrow();
     expect(() => powBigInt(BigInt(6), BigInt(-7))).toThrow();
   });
-});
 
-describe('powBigInt', () => {
   it('should return the same result as `**` (negative)', () => {
     expect(powBigInt(-2n, 0n)).toBe((-2n) ** 0n);
     expect(powBigInt(-2n, 100000n)).toBe((-2n) ** 100000n);
