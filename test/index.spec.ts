@@ -24,12 +24,11 @@ describe('powBigInt', () => {
     );
   });
 
-  it('should throw error if exponent is negative', () => {
-    expect(() => powBigInt(2n, -3n)).toThrow();
-    expect(() => powBigInt(3n, -4n)).toThrow();
-    expect(() => powBigInt(BigInt(4), -5n)).toThrow();
-    expect(() => powBigInt(BigInt(5), BigInt(-6))).toThrow();
-    expect(() => powBigInt(BigInt(6), BigInt(-7))).toThrow();
+  it('should return the same result as `**` (negative)', () => {
+    expect(powBigInt(-2n, 0n)).toBe((-2n) ** 0n);
+    expect(powBigInt(-2n, 100000n)).toBe((-2n) ** 100000n);
+    expect(powBigInt(-3000n, 2000n)).toBe(BigInt(-3000) ** 2000n);
+    expect(powBigInt(BigInt(-99), 6000n)).toBe((-99n) ** 6000n);
   });
 
   it('should return the same result as `**` (negative)', () => {
@@ -37,5 +36,19 @@ describe('powBigInt', () => {
     expect(powBigInt(-2n, 100000n)).toBe((-2n) ** 100000n);
     expect(powBigInt(-3000n, 2000n)).toBe(BigInt(-3000) ** 2000n);
     expect(powBigInt(BigInt(-99), 6000n)).toBe((-99n) ** 6000n);
+  });
+
+  it('should throw RangeError if exponent is negative', () => {
+    expect(() => powBigInt(2n, -3n)).toThrow(RangeError);
+    expect(() => powBigInt(3n, -4n)).toThrow(RangeError);
+    expect(() => powBigInt(BigInt(4), -5n)).toThrow(RangeError);
+    expect(() => powBigInt(BigInt(5), BigInt(-6))).toThrow(RangeError);
+    expect(() => powBigInt(BigInt(6), BigInt(-7))).toThrow(RangeError);
+  });
+
+  it('should throw TypeError if base or exponent is not BigInt', () => {
+    expect(() => powBigInt(2 as any, 3n)).toThrow(TypeError);
+    expect(() => powBigInt(3n, 4 as any)).toThrow(TypeError);
+    expect(() => powBigInt(4 as any, 5 as any)).toThrow(TypeError);
   });
 });
