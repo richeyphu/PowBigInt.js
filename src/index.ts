@@ -17,7 +17,7 @@
  *
  * @returns {bigint} A number representing base taken to the power of exponent.
  *
- * @throws {TypeError} Both base and exponent must be BigInt. 
+ * @throws {TypeError} Both base and exponent must be BigInt.
  * @throws {RangeError} Exponent must be positive.
  *
  * @example Here's a simple example:
