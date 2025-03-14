@@ -1,4 +1,4 @@
-import { powBigInt } from '../src';
+import { isBigInt, powBigInt } from '../src';
 
 describe('powBigInt', () => {
   it('should be a function', () => {
@@ -50,5 +50,20 @@ describe('powBigInt', () => {
     expect(() => powBigInt(2 as any, 3n)).toThrow(TypeError);
     expect(() => powBigInt(3n, 4 as any)).toThrow(TypeError);
     expect(() => powBigInt(4 as any, 5 as any)).toThrow(TypeError);
+  });
+});
+
+describe('isBigInt', () => {
+  it('should return true for BigInt values', () => {
+    expect(isBigInt(2n)).toBe(true);
+    expect(isBigInt(BigInt(123))).toBe(true);
+  });
+
+  it('should return false for non-BigInt values', () => {
+    expect(isBigInt(2)).toBe(false);
+    expect(isBigInt('2')).toBe(false);
+    expect(isBigInt(null)).toBe(false);
+    expect(isBigInt(undefined)).toBe(false);
+    expect(isBigInt({})).toBe(false);
   });
 });
