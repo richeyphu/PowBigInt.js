@@ -17,8 +17,7 @@
  *
  * @returns {bigint} A number representing base taken to the power of exponent.
  *
- * @throws {TypeError} Base is not a BigInt.
- * @throws {TypeError} Exponent is not a BigInt.
+ * @throws {TypeError} Both base and exponent must be BigInt. 
  * @throws {RangeError} Exponent must be positive.
  *
  * @example Here's a simple example:
@@ -27,14 +26,15 @@
  * ```
  */
 function powBigInt(base: bigint, exp: bigint): bigint {
-  if (!isBigInt(base)) throw new TypeError('Base is not a BigInt');
-  if (!isBigInt(exp)) throw new TypeError('Exponent is not a BigInt');
+  if (!isBigInt(base) || !isBigInt(exp))
+    throw new TypeError('Both base and exponent must be BigInt');
   if (exp < 0) throw new RangeError('Exponent must be positive');
 
   let result = 1n;
   let currentBase = base;
   let currentExp = exp;
 
+  // Exponentiation by squaring
   while (currentExp > 0) {
     if (currentExp % 2n === 1n) result *= currentBase;
     currentBase *= currentBase;
