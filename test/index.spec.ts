@@ -31,13 +31,6 @@ describe('powBigInt', () => {
     expect(powBigInt(BigInt(-99), 6000n)).toBe((-99n) ** 6000n);
   });
 
-  it('should return the same result as `**` (negative)', () => {
-    expect(powBigInt(-2n, 0n)).toBe((-2n) ** 0n);
-    expect(powBigInt(-2n, 100000n)).toBe((-2n) ** 100000n);
-    expect(powBigInt(-3000n, 2000n)).toBe(BigInt(-3000) ** 2000n);
-    expect(powBigInt(BigInt(-99), 6000n)).toBe((-99n) ** 6000n);
-  });
-
   it('should throw RangeError if exponent is negative', () => {
     expect(() => powBigInt(2n, -3n)).toThrow(RangeError);
     expect(() => powBigInt(3n, -4n)).toThrow(RangeError);
